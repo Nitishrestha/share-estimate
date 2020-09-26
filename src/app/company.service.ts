@@ -10,6 +10,7 @@ export class CompanyService {
   tableContent: TableContent = new TableContent();
 
   public populateInformation(company: Company): TableContent {
+    this.infos = [];
     const investment = company.capitalDuration.capital;
     let currentShare = Math.floor(investment / company.price);
     let totalCashBonus = 0;
