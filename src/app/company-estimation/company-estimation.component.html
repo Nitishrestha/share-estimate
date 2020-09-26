@@ -1,0 +1,23 @@
+<h1>Share Estimation</h1>
+<table *ngFor="let info of informations" class="table table-striped">
+  <tr>
+    <th>Year:</th>
+    <td><strong>{{info.year}}</strong></td>
+  </tr>
+  <tr>
+    <th>Cash Bonus:</th>
+    <td><strong>Rs. {{info.cashBonus | number}}</strong></td>
+  </tr>
+  <tr>
+    <th>Share Bonus:</th>
+    <td><strong>{{info.bonusShare | number}}</strong></td>
+  </tr>
+  <tr>
+    <th>Total Share:</th>
+    <td><strong>{{info.totalShare | number}}</strong></td>
+  </tr>
+</table>
+<app-company-summary
+[totalCashBonus]="totalCashBonus"
+[totalShareNetworth]="totalShareNetworth">
+</app-company-summary>

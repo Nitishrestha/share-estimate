@@ -1,0 +1,36 @@
+<div *ngIf="informations && informations.length !==0" class="table-responsive">
+  <h1>Company Info</h1>
+  <table class="table table-striped">
+    <tr>
+      <th>Company Name :</th>
+      <td><strong>{{company.name}}</strong></td>
+    </tr>
+    <tr>
+      <th>Cash Bonus:</th>
+      <td><strong>{{company.expCashBonus | number}}</strong></td>
+    </tr>
+    <tr>
+      <th>Share Bonus :</th>
+      <td><strong>{{company.expShareBonus | number}}%</strong></td>
+    </tr>
+    <tr>
+      <th>Capital Amount :</th>
+      <td><strong>Rs. {{company.capitalDuration.capital | number}}</strong></td>
+    </tr>
+    <tr>
+      <tr>
+        <th>Price per Share :</th>
+        <td><strong>Rs. {{company.price | number}}</strong></td>
+      </tr>
+      <tr>
+      <th>Purchasable Share (quantity) :</th>
+      <td><strong>{{purchasableQuantity | number}}</strong></td>
+    </tr>
+  </table>
+  <app-company-estimation
+  [informations] = "informations"
+  [totalCashBonus]="totalCashBonus"
+  [totalShareNetworth]="totalShareNetworth"
+>
+  </app-company-estimation>
+</div>

@@ -1,0 +1,40 @@
+<div class="container-fluid mb-5">
+  <h1>Welcome to Share Estimation Application(Offline)</h1>
+  <form #companyForm="ngForm" (ngSubmit)="onSubmitButtonClick(companyForm.value)">
+
+    <div class="form-group">
+    <label>Name</label><input type="text" class="form-control" name="name" [ngModel]="comp.name">
+    </div>
+
+    <div class="form-group">
+      <label>Price(Current)</label><input type="text" class="form-control" name="price" [ngModel]="comp.price">
+    </div>
+
+    <div class="form-group">
+      <label>Cash Bonus(Expected)</label><input type="text" class="form-control" name="expCashBonus" [ngModel]="comp.expCashBonus">
+     </div>
+
+    <div class="form-group">
+      <label>Share Bonus(Expected)</label><input type="text" class="form-control" name="expShareBonus" [ngModel]="comp.expShareBonus">
+    </div>
+
+    <div ngModelGroup="capitalDuration">
+    <div class="form-group">
+      <label>Capital Amount</label><input type="text" class="form-control" name="capital" [ngModel]="comp.capitalDuration.capital">
+    </div>
+
+    <div class="form-group">
+      <label>Duration (years)</label><input type="text" class="form-control" name="duration" [ngModel]="comp.capitalDuration.duration">
+    </div>
+  </div>
+
+    <button class="btn btn-primary" type="submit">Check</button>
+  </form>
+</div>
+<app-company-info
+[informations]="informations"
+[company]="company"
+[purchasableQuantity]="purchasableQuantity"
+[totalCashBonus]="totalCashBonus"
+[totalShareNetworth]="totalShareNetworth">
+</app-company-info>
